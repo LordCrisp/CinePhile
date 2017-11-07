@@ -13,33 +13,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/index.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="700">
-                  <caret line="48" column="56" lean-forward="false" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
-                  <folding>
-                    <marker date="1510053078642" expanded="true" signature="119:140" ph="SELECT * FRO... student" />
-                    <marker date="1510053078642" expanded="true" signature="762:895" ph="SELECT * FRO... student_classroom" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index1.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/index1.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="705">
-                  <caret line="46" column="53" lean-forward="false" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
-                  <folding>
-                    <marker date="1510052993329" expanded="true" signature="119:140" ph="SELECT * FRO... student" />
-                    <marker date="1510052993329" expanded="true" signature="762:895" ph="SELECT * FRO... student_classroom" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="dbInfo.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="dbInfo.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/incl/dbInfo.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="220">
@@ -63,15 +37,12 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="index1.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/index1.php">
+          <file leaf-file-name="dbInfo.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/incl/dbInfo.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="765">
-                  <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-                  <folding>
-                    <marker date="1510052993329" expanded="true" signature="119:140" ph="SELECT * FRO... student" />
-                    <marker date="1510052993329" expanded="true" signature="762:895" ph="SELECT * FRO... student_classroom" />
-                  </folding>
+                <state relative-caret-position="220">
+                  <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -169,16 +140,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510040650281</updated>
-      <workItem from="1510040651703" duration="9649000" />
+      <workItem from="1510040651703" duration="10248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9649000" />
+    <option name="totallyTimeSpent" value="10248000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13177083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -292,12 +262,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
+        <state relative-caret-position="1000">
           <caret line="48" column="56" lean-forward="false" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="56" />
-          <folding>
-            <marker date="1510053078642" expanded="true" signature="119:140" ph="SELECT * FRO... student" />
-            <marker date="1510053078642" expanded="true" signature="762:895" ph="SELECT * FRO... student_classroom" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -305,10 +272,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-          <folding>
-            <marker date="1510052993329" expanded="true" signature="119:140" ph="SELECT * FRO... student" />
-            <marker date="1510052993329" expanded="true" signature="762:895" ph="SELECT * FRO... student_classroom" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
