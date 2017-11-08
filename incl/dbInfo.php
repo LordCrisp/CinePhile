@@ -2,9 +2,9 @@
 
 /* -- DATABASE CONNECTION -- */
 $dbServerName = "localhost";
-$dbUserName = "admin";
-$dbPassword = "admin";
-$dbName = "cinephile";
+$dbUserName = "bamse";
+$dbPassword = "test";
+$dbName = "class";
 
 
 $dbConnect = new mysqli ($dbServerName, $dbUserName,$dbPassword, $dbName);
