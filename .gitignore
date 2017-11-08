@@ -1,0 +1,4 @@
+# Ignore these files please :)
+.idea
+assets/styles/.sass-cache
+assets/styles/.sass-cache/*
