@@ -1,5 +1,6 @@
 <?php
     require 'assets/includes/header.php';
+    require  'assets/includes/dbInfo.php';
 ?>
 
     <!-- Movie banner start (Desktop only) -->
