@@ -1,0 +1,1 @@
+<?php $dbConnect -> close(); ?>
