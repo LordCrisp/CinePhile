@@ -1,18 +1,20 @@
 /*
-Error: Invalid CSS after "import ": expected selector, was ""/vars/_colors...."
+Error: File to import not found or unreadable: /vars/_colors.sass.
+       Load path: /home/sandersalamander/Projects/WIHF/PHP/cinephile/assets/styles/sass
         on line 4 of sass/master.sass
 
 1: /*-- Master stylesheet
 2: 
 3: /*-- Variables & mixins
-4: import "/vars/_colors.sass"
+4: @import "/vars/_colors.sass"
 
 Backtrace:
 sass/master.sass:4
-/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1278:in `expected'
-/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/scss/parser.rb:1208:in `expected'
-/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/scss/static_parser.rb:21:in `parse_selector'
-/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:438:in `visit_rule'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:67:in `rescue in import'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:45:in `import'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:28:in `imported_file'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/import_node.rb:37:in `css_import?'
+/var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:314:in `visit_import'
 /var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/base.rb:36:in `visit'
 /var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
 /var/lib/gems/2.3.0/gems/sass-3.5.1/lib/sass/stack.rb:79:in `block in with_base'
@@ -52,4 +54,4 @@ sass/master.sass:4
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"import \": expected selector, was \"\"/vars/_colors....\"\A         on line 4 of sass/master.sass\A \A 1: /*-- Master stylesheet\A 2: \A 3: /*-- Variables & mixins\A 4: import \"/vars/_colors.sass\""; }
+  content: "Error: File to import not found or unreadable: /vars/_colors.sass.\A        Load path: /home/sandersalamander/Projects/WIHF/PHP/cinephile/assets/styles/sass\A         on line 4 of sass/master.sass\A \A 1: /*-- Master stylesheet\A 2: \A 3: /*-- Variables & mixins\A 4: @import \"/vars/_colors.sass\""; }
