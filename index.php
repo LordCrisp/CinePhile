@@ -143,12 +143,12 @@ $result = $dbConnect ->query($query);
         <li class="movie__item">
             <figure>
                 <picture>
-                    <source srcset="assets/posters/small.jpeg" media="(min-width: 0px"> <!-- Small -->
-                    <source srcset="assets/posters/large.jpeg" media="(min-width: 960px"> <!-- Large -->
-                    <img src="assets/posters/small.jpeg" alt="<?=str_replace(' ', '-', $row['title'])?>-poster"> <!-- Default to small -->
+                    <source srcset="assets/movies/<?=$row['id']?>/poster_small.jpg" media="(min-width: 0px"> <!-- Small -->
+                    <source srcset="assets/movies/<?=$row['id']?>/poster.jpg" media="(min-width: 960px"> <!-- Large -->
+                    <img src="assets/movies/<?=$row['id']?>/poster_small.jpg" alt="<?=str_replace(' ', '-', $row['title'])?>-poster"> <!-- Default to small -->
                 </picture>
             </figure>
-            <h2 class="movie_title"><?=$row['title']?></h2>
+            <h2 class="movie__title"><?=$row['title']?></h2>
 
         </li>
         <?php endwhile; ?>
