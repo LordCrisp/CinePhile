@@ -2,7 +2,7 @@
 require 'assets/includes/header.php';
 require 'assets/includes/dbInfo.php';
 
-$query = "SELECT * FROM cinephile";
+$query = "SELECT * FROM movie";
 $result = $dbConnect ->query($query);
 ?>
 
@@ -133,27 +133,30 @@ $result = $dbConnect ->query($query);
 </section>
 <!-- Movie banner end -->
 
-<!-- Movie list start -->
+<!---------------------------------------------------------------------------------
+------------------------------ Movie list start -----------------------------------
+---------------------------------------------------------------------------------->
 <section class="movie__section">
     <h1 class="section__title">title</h1>
     <ul class="movie__list">
+        <?php while ($row = $result -> fetch_assoc()) : ?>
         <li class="movie__item">
             <figure>
                 <picture>
                     <source srcset="assets/posters/small.jpeg" media="(min-width: 0px"> <!-- Small -->
                     <source srcset="assets/posters/large.jpeg" media="(min-width: 960px"> <!-- Large -->
-                    <img src="assets/posters/small.jpeg" alt="movie_name"> <!-- Default to small -->
+                    <img src="assets/posters/small.jpeg" alt="<?=str_replace(' ', '-', $row['title'])?>-poster"> <!-- Default to small -->
                 </picture>
             </figure>
-            <h2 class="movie_title">movie title</h2>
+            <h2 class="movie_title"><?=$row['title']?></h2>
+
         </li>
+        <?php endwhile; ?>
     </ul>
 </section>
 <!-- Movie list end -->
 
-<?php
-require 'assets/includes/footer.php'
-?>
+<?php require 'assets/includes/footer.php' ?>
 
 </body>
 </html>
