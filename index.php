@@ -71,27 +71,22 @@ $infoRow = $infoResult->fetch_assoc();*/
         <!-- Movie main info end -->
         <!-- Movie trailer start -->
         <div class="movie__trailer">
-            <video id="media-video" controls>
-                <source src="assets/movies/movie.mp4" type="video/mp4">
-            </video>
-            <div class="media__controls--wrapper">
-                <div id="media-controls" class="fullscreen-no">
-                    <button id="play-pause-button" class="play material-icons" title="play"
-                            onclick="togglePlayPause();">play_arrow
-                    </button>
-                    <!-- Toggle fullscreen -->
-                    <button id="toggle-fullscreen" class="fullscreen-no material-icons" onclick="toggleFullscreen()">
-                        fullscreen
-                    </button>
+            <div class="player__main">
+                <video controls id="player_video">
+                    <source src="assets/movies/1/trailer.mp4">
+                </video>
+                <div class="player__controls" id="controls">
+                    <!-- Play / pause -->
+                    <button id="controls_play-pause" onclick="togglePlayPause();"><i class="material-icons">play_arrow</i></button>
+                    <!-- Audio control -->
+                    <div class="controls__wrapper">
+                        <button id="controls_mute" onclick="toggleMute()"><i class="material-icons">volume_up</i></button>
+                        <input type="range" id="controls_volume" min="0" max="100" step="1" oninput="setVolume(this.value)" onchange="setVolume(this.value)">
+                    </div>
                     <!-- Progress bar -->
-                    <progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
-                    <!-- Volume up/down -->
-                    <button id='volume-inc-button' class='volume-plus' title='increase volume'
-                            onclick='changeVolume("+");'>Increase volume
-                    </button>
-                    <button id='volume-dec-button' class='volume-minus' title='decrease volume'
-                            onclick='changeVolume("-");'>Decrease volume
-                    </button>
+                    <progress id="controls_progress" min="0" max="100" value="0">% played</progress>
+                    <!-- Toggle fullscreen -->
+                    <button id="controls_fullscreen" onclick="toggleFullscreen(document.getElementById('player_video'));"><i class="material-icons">fullscreen</i></button>
                 </div>
             </div>
         </div>
@@ -155,8 +150,7 @@ $infoRow = $infoResult->fetch_assoc();*/
                 </picture>
             </figure>
             <h2 class="movie__title"><?=$listRow['title']?></h2>
-
-        </li>
+            </li>
         <?php endwhile; ?>
     </ul>
 </section>
