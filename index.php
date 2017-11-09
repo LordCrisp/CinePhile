@@ -3,7 +3,7 @@ require 'assets/includes/header.php';
 require 'assets/includes/dbInfo.php';
 
 $query = "SELECT * FROM movie";
-$result = $dbConnect ->query($query);
+$result = $dbConnect->query($query);
 ?>
 
 <!-- Movie banner start (Desktop only) -->
@@ -139,20 +139,39 @@ $result = $dbConnect ->query($query);
 <section class="movie__section">
     <h1 class="section__title">Recommended For You</h1>
     <ul class="movie__list">
-        <?php while ($row = $result -> fetch_assoc()) : ?>
-        <li class="movie__item">
-            <figure>
-                <picture>
-                    <source srcset="assets/movies/<?=$row['id']?>/poster_small.jpg" media="(min-width: 0px"> <!-- Small -->
-                    <source srcset="assets/movies/<?=$row['id']?>/poster.jpg" media="(min-width: 960px"> <!-- Large -->
-                    <img src="assets/movies/<?=$row['id']?>/poster_small.jpg" alt="<?=str_replace(' ', '-', $row['title'])?>-poster"> <!-- Default to small -->
-                </picture>
-            </figure>
-            <h2 class="movie__title"><?=$row['title']?></h2>
+        <?php while ($row = $result->fetch_assoc()) : ?>
+            <li class="movie__item">
+                <figure>
+                    <picture>
+                        <source srcset="assets/movies/<?= $row['id'] ?>/poster_small.jpg" media="(min-width: 0px">
+                        <!-- Small -->
+                        <source srcset="assets/movies/<?= $row['id'] ?>/poster.jpg" media="(min-width: 960px">
+                        <!-- Large -->
+                        <img src="assets/movies/<?= $row['id'] ?>/poster_small.jpg"
+                             alt="<?= str_replace(' ', '-', $row['title']) ?>-poster"> <!-- Default to small -->
+                    </picture>
+                </figure>
+                <h2 class="movie__title"><?= $row['title'] ?></h2>
 
-        </li>
+            </li>
         <?php endwhile; ?>
     </ul>
+
+    <div class="player__main">
+        <video controls id="player_video">
+            <source src="assets/movies/1/trailer.mp4">
+        </video>
+        <div class="player__controls">
+            <!-- Play / pause -->
+            <button id="controls_play-pause" onclick="togglePlayPause();"><i class="material-icons">play_arrow</i></button>
+            <!-- Audio control -->
+            <div class="controls__wrapper"><i class="material-icons">volume_up</i><input type="range" id="controls_volume" min="0" max="100" step="1" oninput="setVolume(this.value)" onchange="setVolume(this.value)"></div>
+            <!-- Progress bar -->
+            <progress id="controls_progress" min="0" max="100" value="0">% played</progress>
+            <!-- Toggle fullscreen -->
+            <button id="controls_fullscreen" onclick="toggleFullscreen();"><i class="material-icons">fullscreen</i></button>
+        </div>
+    </div>
 </section>
 <!-- Movie list end -->
 
