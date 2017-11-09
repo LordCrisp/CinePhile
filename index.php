@@ -137,7 +137,7 @@ $result = $dbConnect ->query($query);
 ------------------------------- Movie list start ----------------------------------
 ---------------------------------------------------------------------------------->
 <section class="movie__section">
-    <h1 class="section__title">title</h1>
+    <h1 class="section__title">Recommended For You</h1>
     <ul class="movie__list">
         <?php while ($row = $result -> fetch_assoc()) : ?>
         <li class="movie__item">
