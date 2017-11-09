@@ -73,7 +73,7 @@ $infoRow = $infoResult->fetch_assoc();*/
         <div class="movie__trailer">
             <div class="player__main">
                 <video controls id="player_video">
-                    <source src="assets/movies/1/trailer.mp4">
+                    <source src="assets/movies/<?=$infoRow['id']?>/trailer.mp4">
                 </video>
                 <div class="player__controls" id="controls">
                     <!-- Play / pause -->

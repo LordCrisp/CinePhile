@@ -26,7 +26,7 @@ $listResult = $dbConnect ->query($listQuery);
 //listRow variable written in loop in index
 
 /* -- MOVIE SELECTION -- */
-$movieSelect = 3;
+$movieSelect = 1;
 
 //INFO SELECTION
 $infoQuery = "SELECT * FROM movie WHERE id = ".$movieSelect."";
