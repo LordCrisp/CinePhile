@@ -16,3 +16,23 @@
   -webkit-border-radius: $radius
   -moz-border-radius: $radius
   border-radius: $radius
+
+/*-- Wrapper mixin
+@mixin wrapper ($width)
+  @media only screen and (min-width: $width)
+    width: $width
+    margin: auto
+
+/*-- Animation mixin
+@mixin animation ($animation)
+  -webkit-animation: $animation
+  -o-animation: $animation
+  animation: $animation
+
+/*-- Transition mixin
+@mixin transition ($transition)
+  -webkit-transition: $transition
+  -moz-transition: $transition
+  -ms-transition: $transition
+  -o-transition: $transition
+  transition: $transition
