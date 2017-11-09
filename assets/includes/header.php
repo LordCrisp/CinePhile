@@ -18,6 +18,6 @@
 
 <!-- Header start -->
 <header class="header__main">
-    <a class="header__logo" href="index.php"><img src="assets/app/logo.svg"></a>
+    <a class="header__logo" href="index.php"><img src="assets/app/logo.svg"><h1>CinePhile</h1></a>
 </header>
 <!-- Header end -->
