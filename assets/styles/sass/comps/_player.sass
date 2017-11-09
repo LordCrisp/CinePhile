@@ -2,10 +2,14 @@
 .player__main
   position: relative
   display: block
-  width: 412px
   height: auto
   #player_video
     width: 100%
+  #player_video:hover ~ .player__controls
+    @include transition(all 0.2s)
+    opacity: 1
+  .player__controls.fades
+    opacity: 0
   .player__controls
     position: absolute
     bottom: 7px
@@ -16,6 +20,9 @@
     align-items: center
     width: 100%
     height: 56px
+    z-index: 2147483647
+    opacity: 1
+    @include transition(ease 1s)
     &::after
       content: ' '
       position: absolute
@@ -35,6 +42,7 @@
       width: 48px
       height: 48px
       border: none
+      cursor: pointer
       @include border-radius(48px)
       background-color: $transparent
       color: $light__4
@@ -120,6 +128,7 @@
         overflow: hidden
       &::-webkit-progress-value
         background-color: $brand__dark
+        @include transition(1s)
     /*-- Controls wrapper
     .controls__wrapper
       position: relative
@@ -128,5 +137,7 @@
       justify-content: flex-start
       align-items: center
       width: 100%
-      i
-        margin: 0 16px
+video::-webkit-media-controls
+  display: none !important
+video::-webkit-media-controls-enclosure
+  display: none !important
