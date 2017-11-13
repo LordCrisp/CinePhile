@@ -15,29 +15,31 @@ $count = mysqli_num_rows($result);
 
 if($count == 1){
   $_SESSION['email'] = $email;
+} else {
+  echo "Wrong e-mail or password";
 }
+
 }
 
 
 if (isset($_SESSION['email'])){
   $email = $_SESSION['email'];
   echo "Welcome  $email";
+  header("Location: /index.php");
   echo "<a class='btn btnlg btn-primary' href='logoff.php'>Log off</a>";
-
 }
 
 ?>
-<form method="post">
-  <input type="text" name="email" placeholder="E-Mail" required>
-  <input type="password" name="password" placeholder="Password" required>
-  <button class="btn btn-lg btn-primary" type="submit">Login</button>
-  <a class="btn btn-lg btn-primary" href="register.php">Register</a>
-</form>
-
+<center>
+  <form method="post">
+    <input type="text" name="email" placeholder="E-Mail" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button class="btn btn-lg btn-primary" type="submit">Login</button>
+    <a class="btn btn-lg btn-primary" href="register.php">Register</a>
+  </form>
+</center>
 
 
 
 
 <?php require 'footer.php' ?>
-</body>
-</html>

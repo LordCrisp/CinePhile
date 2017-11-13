@@ -6,6 +6,8 @@ $query = "SELECT * FROM movie";
 $result = $dbConnect ->query($query);
 ?>
 
+<a class='btn btnlg btn-primary' href='/assets/includes/logoff.php'>Log off</a>
+
 <!-- Movie banner start (Desktop only) -->
 <section class="movie__section--banner">
     <div class="section__wrapper row">
