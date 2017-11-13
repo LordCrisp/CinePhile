@@ -1,4 +1,6 @@
 <?php
+/* -- MOVIE SELECTION -- */
+$movieSelect = 1;
 
 /* -- DATABASE CONNECTION -- */
 $dbServerName = "localhost";
@@ -16,8 +18,6 @@ if ($dbConnect -> connect_errno) {
     echo "Database Error - " .$dbConnect -> connect_errno;
 }
 
-
-
 /* -- DATABASE SELECTION VARIABLES -- */
 
 //LIST SELECTION
@@ -25,8 +25,7 @@ $listQuery = "SELECT * FROM movie";
 $listResult = $dbConnect ->query($listQuery);
 //listRow variable written in loop in index
 
-/* -- MOVIE SELECTION -- */
-$movieSelect = 1;
+
 
 //INFO SELECTION
 $infoQuery = "SELECT * FROM movie WHERE id = ".$movieSelect."";
@@ -62,3 +61,8 @@ $screenwriterResult = $dbConnect -> query($screenwriterQuery);
 $actorMoreQuery = "SELECT * FROM movie_actor INNER JOIN people ON people.id = movie_actor.actor WHERE movie_actor.movie_id = ".$movieSelect."";
 $actorMoreResult = $dbConnect -> query($actorMoreQuery);
 //actorMoreRow variable written in loop in index
+
+//USER RATING SELECTION
+$userRatingQuery = "SELECT * FROM user_rating WHERE movie_id = ".$movieSelect."";
+$userRatingResult = $dbConnect -> query($userRatingQuery);
+//userRatingRow variable written in loop in index

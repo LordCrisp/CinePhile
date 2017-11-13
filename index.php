@@ -1,17 +1,10 @@
 <?php
 require 'assets/includes/header.php';
 require 'assets/includes/dbInfo.php';
-
-/*$query = "SELECT * FROM movie";
-$result = $dbConnect ->query($query);*/
+require 'assets/includes/userRating.php';
 ?>
 
 <!-- Movie banner start (Desktop only) -->
-<?php
-/*$infoQuery = "SELECT * FROM movie WHERE id = 1";
-$infoResult = $dbConnect -> query($infoQuery);
-$infoRow = $infoResult->fetch_assoc();*/
-?>
 <section class="movie__section--banner">
     <div class="section__wrapper row">
         <!-- Movie poster start -->
@@ -30,10 +23,8 @@ $infoRow = $infoResult->fetch_assoc();*/
         <div class="movie__info">
             <ul class="info__list">
                 <li><h1><?=$infoRow['title']?></h1></li>
-                <li>
-                    <small><?=$infoRow['year']?></small>
-                </li>
-                <li>User Rating</li>
+                <li><small><?=$infoRow['year']?></small></li>
+                <li><p>User Rating <?=$ratingStars?></p></li>
                 <li><p><?=$infoRow['runtime']?></p></li>
                 <li><p><?=$infoRow['content_rating']?></p></li>
                 <li>
