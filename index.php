@@ -105,8 +105,8 @@ require 'assets/includes/userRating.php';
                 <li>
                     <p>Actors</p>
                     <ul class="movie__info--sublist">
-                        <?php while ($actorRows = $actorResult -> fetch_array()) : ?>
-                            <li><?=$actorRows['name']?></li>
+                        <?php while ($actorMoreRows = $actorMoreResult -> fetch_array()) : ?>
+                            <li><?=$actorMoreRows['name']?></li>
                         <?php endwhile; ?>
                     </ul>
                 </li>
