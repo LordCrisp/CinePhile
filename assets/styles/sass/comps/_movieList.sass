@@ -1,5 +1,4 @@
 /*-- Movie list (Device)
-
 .movie__grid--list
   .section__title
     position: relative
@@ -48,4 +47,10 @@
       &:active
         @include transform(translateY(-3px))
         @include box-shadow(2)
+
+/*-- Movie list (Desktop)
+@media only screen and (min-width: 960px)
+  .movie__grid--list
+    .movie__list
+      .movie__item
 

@@ -11,7 +11,7 @@ require 'assets/includes/userRating.php';
             <img src="assets/movies/<?=$infoRow['id']?>/hero.jpg" alt="movie_banner">
         </figure>
     </div>
-    <div class="section__wrapper row">
+    <div class="section__wrapper">
         <!-- Movie poster start -->
         <div class="movie__poster">
             <figure>
