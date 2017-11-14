@@ -215,6 +215,21 @@
           width: 100% !important
           height: auto !important
           filter: blur(0px) !important
+    .section__wrapper
+      position: relative
+      display: block
+      @include wrapper(1000px)
+      .movie__poster
+        position: relative
+        display: block
+        padding: 32px 0 0 0
+        figure
+          img
+            width: 100%
+            max-width: 256px
+            height: auto
+            @include border-radius(0.2rem)
+            @include box-shadow(2)
 
 /*-- Movie info (Large Desktop)
 @media only screen and (min-width: 1168px)

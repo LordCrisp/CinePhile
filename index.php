@@ -5,12 +5,12 @@ require 'assets/includes/userRating.php';
 ?>
 
 <!-- Movie banner start (Desktop only) -->
-<section class="movie__section--banner active" id="movie">
+<section class="movie__section--banner" id="movie">
     <div class="movie__banner">
         <figure>
             <picture>
-                <source srcset="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
                 <source srcset="assets/movies/<?=$infoRow['id']?>/hero.jpg" media="(min-width: 960px)"> <!-- Large -->
+                <source srcset="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
                 <img src="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" alt="movie_name"> <!-- Default to small -->
             </picture>
         </figure>
@@ -20,8 +20,8 @@ require 'assets/includes/userRating.php';
         <div class="movie__poster">
             <figure>
                 <picture>
-                    <source srcset="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
                     <source srcset="assets/movies/<?=$infoRow['id']?>/poster.jpg" media="(min-width: 960px)"> <!-- Large -->
+                    <source srcset="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
                     <img src="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" alt="movie_name"> <!-- Default to small -->
                 </picture>
             </figure>
@@ -147,8 +147,8 @@ require 'assets/includes/userRating.php';
         <li class="movie__item">
             <figure>
                 <picture>
-                    <source srcset="assets/movies/<?=$listRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
                     <source srcset="assets/movies/<?=$listRow['id']?>/poster.jpg" media="(min-width: 960px)"> <!-- Large -->
+                    <source srcset="assets/movies/<?=$listRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
                     <img src="assets/movies/<?=$listRow['id']?>/poster_small.jpg" alt="<?=str_replace(' ', '-', $listRow['title'])?>-poster"> <!-- Default to small -->
                 </picture>
             </figure>
