@@ -8,7 +8,7 @@ require 'assets/includes/userRating.php';
 <section class="movie__section--banner">
     <div class="movie__banner">
         <figure>
-            <img src="assets/movies/<?=$infoRow['id']?>" alt="movie_banner">
+            <img src="assets/movies/<?=$infoRow['id']?>/hero.jpg" alt="movie_banner">
         </figure>
     </div>
     <div class="section__wrapper row">
