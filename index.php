@@ -60,10 +60,12 @@ require 'assets/includes/userRating.php';
                 </div>
                 <div class="movie__info--list-container">
                     <ul class="movie__info--list">
-                        <li>Top cast</li>
-                        <?php while ($actorRow = $actorResult -> fetch_array()) : ?>
-                        <li><?=$actorRow['name']?></li>
-                        <?php endwhile; ?>
+                        <li>
+                            <p>Top cast</p>
+                            <?php while ($actorRow = $actorResult -> fetch_array()) : ?>
+                            <p><?=$actorRow['name']?></p>
+                            <?php endwhile; ?>
+                        </li>
                     </ul>
                 </div>
             </div>

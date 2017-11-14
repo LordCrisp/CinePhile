@@ -25,7 +25,7 @@
         display: block
         width: 100%
         height: 100%
-        filter: blur(50px)
+        filter: blur(50px) brightness(0.7)
   .section__wrapper
     display: block
     @include wrapper(1080px)
@@ -98,7 +98,20 @@
         display: flex
         flex-direction: row
         justify-content: space-around
-        align-items: center
+        align-items: flex-start
+        .movie__info--list-container
+          .movie__info--list
+            li
+              p:nth-child(1)
+                font-weight: 500
+                font-size: 18px
+                margin-bottom: 4px
+              p
+                font-weight: 400
+                font-size: 14px
+                margin-bottom: 4px
+              p:last-child
+                margin-bottom: 16px
     .movie__trailer
       position: relative
       display: block
