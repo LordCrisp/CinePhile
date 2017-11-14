@@ -3,6 +3,7 @@
 /* -- User rating calculation (Start) -- */
                 $ratingAddup = 0;
                 $ratingCounter = 0;
+                $userRating = null;
 
                 while ($userRatingRow = $userRatingResult -> fetch_assoc()) {
                     $ratingAddup = $ratingAddup + $userRatingRow['rating'];
@@ -101,7 +102,7 @@
      case ($userRating == null):
          $ratingStars = "Not Yet Rated";
          break;
-         
+
      default:
          $ratingStars = "Not Yet Rated";
          break;
