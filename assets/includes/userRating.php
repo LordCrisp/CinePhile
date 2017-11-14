@@ -19,6 +19,10 @@
 /* -- User rating stars manufacturing (Start) -- */
  switch (true) {
 
+    case ($userRating == null):
+         $ratingStars = "Not Yet Rated";
+         break;
+
     case ($userRating <= 0.7):
         $ratingStars = '<i class="material-icons">star_half</i>
                                                 <i class="material-icons">star_border</i>
@@ -98,11 +102,7 @@
                                                 <i class="material-icons">star</i>
                                                 <i class="material-icons">star</i>';
         break;
-
-     case ($userRating == null):
-         $ratingStars = "Not Yet Rated";
-         break;
-
+     
      default:
          $ratingStars = "Not Yet Rated";
          break;
