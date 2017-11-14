@@ -8,7 +8,11 @@ require 'assets/includes/userRating.php';
 <section class="movie__section--banner active" id="movie">
     <div class="movie__banner">
         <figure>
-            <img src="assets/movies/<?=$infoRow['id']?>/hero.jpg" alt="movie_banner">
+            <picture>
+                <source srcset="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
+                <source srcset="assets/movies/<?=$infoRow['id']?>/hero.jpg" media="(min-width: 960px)"> <!-- Large -->
+                <img src="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" alt="movie_name"> <!-- Default to small -->
+            </picture>
         </figure>
     </div>
     <div class="section__wrapper">
@@ -24,20 +28,21 @@ require 'assets/includes/userRating.php';
         </div>
         <!-- Movie poster end -->
         <!-- Movie main info start -->
+        <ul class="info__list">
+            <li><h1><?=$infoRow['title']?></h1></li>
+            <li><small><?=$infoRow['year']?></small></li>
+            <li><p id="info_userrating"><?=$ratingStars?></p></li>
+            <li><p id="info_runtime"><?=$infoRow['runtime']?></p></li>
+            <li><p id="info_contentrating"><?=$infoRow['content_rating']?></p></li>
+            <li><p id="info_genre">Action, Crime, Drama</p></li>
+            <li id="list_summary">
+                <article class="movie__summary">
+                    <p><?=$infoRow['plot']?></p>
+                </article>
+            </li>
+        </ul>
 
         <div class="movie__info">
-            <ul class="info__list">
-                <li><h1><?=$infoRow['title']?></h1></li>
-                <li><small><?=$infoRow['year']?></small></li>
-                <li><p>User Rating <?=$ratingStars?></p></li>
-                <li><p><?=$infoRow['runtime']?></p></li>
-                <li><p><?=$infoRow['content_rating']?></p></li>
-                <li>
-                    <article class="movie__summary">
-                        <p><?=$infoRow['plot']?></p>
-                    </article>
-                </li>
-            </ul>
             <div class="movie__info--split">
                 <div class="movie__info--list-container">
                     <ul class="movie__info--list">
