@@ -20,7 +20,7 @@
     width: 100%
     overflow-x: auto
     margin: 0
-    padding: 0 8px 8px 8px
+    padding: 8px 8px 8px 8px
     .movie__item
       position: relative
       display: block
@@ -30,6 +30,7 @@
       background-color: $dark__4
       overflow: hidden
       @include box-shadow(1)
+      @include easing-standard(0.3s)
       figure
         margin: 0
         padding: 0
@@ -44,4 +45,7 @@
         height: 28px
         font-size: 16px
         font-weight: 500
+      &:active
+        @include transform(translateY(-3px))
+        @include box-shadow(2)
 
