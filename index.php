@@ -6,13 +6,18 @@ require 'assets/includes/userRating.php';
 
 <!-- Movie banner start (Desktop only) -->
 <section class="movie__section--banner">
+    <div class="movie__banner">
+        <figure>
+            <img src="assets/movies/<?=$infoRow['id']?>" alt="movie_banner">
+        </figure>
+    </div>
     <div class="section__wrapper row">
         <!-- Movie poster start -->
         <div class="movie__poster">
             <figure>
                 <picture>
-                    <source srcset="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" media="(min-width: 0px"> <!-- Small -->
-                    <source srcset="assets/movies/<?=$infoRow['id']?>/poster.jpg" media="(min-width: 960px"> <!-- Large -->
+                    <source srcset="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
+                    <source srcset="assets/movies/<?=$infoRow['id']?>/poster.jpg" media="(min-width: 960px)"> <!-- Large -->
                     <img src="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" alt="movie_name"> <!-- Default to small -->
                 </picture>
             </figure>
@@ -135,8 +140,8 @@ require 'assets/includes/userRating.php';
         <li class="movie__item">
             <figure>
                 <picture>
-                    <source srcset="assets/movies/<?=$listRow['id']?>/poster_small.jpg" media="(min-width: 0px"> <!-- Small -->
-                    <source srcset="assets/movies/<?=$listRow['id']?>/poster.jpg" media="(min-width: 960px"> <!-- Large -->
+                    <source srcset="assets/movies/<?=$listRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
+                    <source srcset="assets/movies/<?=$listRow['id']?>/poster.jpg" media="(min-width: 960px)"> <!-- Large -->
                     <img src="assets/movies/<?=$listRow['id']?>/poster_small.jpg" alt="<?=str_replace(' ', '-', $listRow['title'])?>-poster"> <!-- Default to small -->
                 </picture>
             </figure>
