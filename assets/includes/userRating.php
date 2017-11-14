@@ -98,6 +98,10 @@
                                                 <i class="material-icons">star</i>';
         break;
 
+     case ($userRating == null):
+         $ratingStars = "Not Yet Rated";
+         break;
+         
      default:
          $ratingStars = "Not Yet Rated";
          break;
