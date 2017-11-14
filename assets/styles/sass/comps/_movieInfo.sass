@@ -50,7 +50,7 @@
       list-style: none
       li
         padding: 0 0 0 calc(40% + 32px)
-        margin: 0 0 16px 0
+        margin: 0 0 8px 0
         h1
           position: absolute
           top: 32px
@@ -137,6 +137,7 @@
     .movie__info--secondary
       position: relative
       display: block
+      padding: 0 0 16px 0
       margin: 16px 0 0 0
       @include border-radius(0.2rem)
       background-color: $dark__4
@@ -148,12 +149,51 @@
         justify-content: flex-start
         align-items: center
         width: 100%
-        height: 56px
+        height: 64px
         margin: 0
         padding: 0 0 0 16px
         font-weight: 300
         font-size: 28px
         text-transform: uppercase
+      .movie__info--list
+        li
+          margin-bottom: 24px
+          h3
+            padding: 0 0 0 16px
+            color: $light__4
+            font-weight: 500
+            font-size: 18px
+            margin-bottom: 8px
+          p
+            padding: 0 0 0 16px
+            color: $light__1
+            font-weight: 400
+            font-size: 14px
+          .movie__info--sublist
+            position: relative
+            display: flex
+            flex-direction: row
+            justify-content: flex-start
+            align-items: center
+            width: 100%
+            height: 56px
+            overflow-y: auto
+            li
+              position: relative
+              display: flex
+              flex-direction: row
+              justify-content: center
+              align-items: center
+              height: 40px
+              padding: 0 16px
+              margin: 0 16px
+              border: 2px solid $light__1
+              @include border-radius(40px)
+              background-color: $dark__4
+              color: $light__1
+              font-weight: 400
+              font-size: 18px
+              white-space: nowrap
 
 /*-- Movie info (Desktop)
 @media only screen and (min-width: 960px)

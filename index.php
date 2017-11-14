@@ -99,7 +99,7 @@ require 'assets/includes/userRating.php';
             <h2>more info</h2>
             <ul class="movie__info--list">
                 <li>
-                    <p>Producer</p>
+                    <h3>Producer</h3>
                     <ul class="movie__info--sublist">
                         <?php while ($producerRow = $producerResult -> fetch_assoc()) : ?>
                             <li><?=$producerRow['name']?></li>
@@ -107,7 +107,7 @@ require 'assets/includes/userRating.php';
                     </ul>
                 </li>
                 <li>
-                    <p>Screenwriter</p>
+                    <h3>Screenwriter</h3>
                     <ul class="movie__info--sublist">
                         <?php while ($screenwriterRow = $screenwriterResult -> fetch_assoc()) : ?>
                             <li><?=$screenwriterRow['name']?></li>
@@ -115,7 +115,7 @@ require 'assets/includes/userRating.php';
                     </ul>
                 </li>
                 <li>
-                    <p>Actors</p>
+                    <h3>Actors</h3>
                     <ul class="movie__info--sublist">
                         <?php while ($actorMoreRows = $actorMoreResult -> fetch_array()) : ?>
                             <li><?=$actorMoreRows['name']?></li>
@@ -123,11 +123,11 @@ require 'assets/includes/userRating.php';
                     </ul>
                 </li>
                 <li>
-                    <p>Country</p>
+                    <h3>Country</h3>
                     <p><?=$infoRow['country']?></p>
                 </li>
                 <li>
-                    <p>Language</p>
+                    <h3>Language</h3>
                     <p><?=$infoRow['language']?></p>
                 </li>
             </ul>
