@@ -5,7 +5,7 @@ require 'assets/includes/userRating.php';
 ?>
 
 <!-- Movie banner start (Desktop only) -->
-<section class="movie__section--banner">
+<section class="movie__section--banner" id="movie">
     <div class="movie__banner">
         <figure>
             <img src="assets/movies/<?=$infoRow['id']?>/hero.jpg" alt="movie_banner">
@@ -133,7 +133,7 @@ require 'assets/includes/userRating.php';
 <!---------------------------------------------------------------------------------
 ------------------------------- Movie list start ----------------------------------
 ---------------------------------------------------------------------------------->
-<section class="movie__section">
+<section class="movie__grid--list">
     <h1 class="section__title">Recommended For You</h1>
     <ul class="movie__list">
         <?php while ($listRow = $listResult -> fetch_assoc()) : ?>

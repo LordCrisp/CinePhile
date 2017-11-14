@@ -1,7 +1,56 @@
 /*-- Movie info (Device)
-section[class^='movie__section']
-  position: block
+.movie__section--banner
+  position: fixed
   top: 0
   left: 0
+  display: none
   width: 100vw
   min-height: 100vh
+  z-index: 200
+  .movie__banner
+    position: absolute
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    figure
+      margin: 0
+      height: 100%
+      img
+        position: relative
+        display: block
+        width: 100%
+        height: 100%
+        filter: blur(50px)
+  .section__wrapper
+    position: relative
+    display: block
+    z-index: 250
+
+.movie__section--banner.active
+  display: block
+
+/*-- Movie info (Desktop)
+@media only screen and (min-width: 960px)
+  .movie__section--banner
+    position: relative !important
+    width: 100vw
+    height: 334px
+    z-index: 50
+    .movie__banner
+      position: absolute
+      top: 0
+      left: 0
+      height: inherit !important
+      overflow: hidden !important
+      figure
+        height: inherit
+        img
+          width: 100% !important
+          height: auto !important
+          filter: blur(0px) !important
+
+/*-- Movie info (Large Desktop)
+@media only screen and (min-width: 1168px)
+  .movie__section--banner
+    height: 400px
