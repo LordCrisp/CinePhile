@@ -1,10 +1,11 @@
 /*-- Movie info (Device)
 .movie__section--banner
-  position: fixed
+  position: absolute
   top: 0
   left: 0
   display: none
   width: 100vw
+  height: 200vh
   z-index: 2000
   .movie__banner
     position: absolute
@@ -23,16 +24,15 @@
         height: 100%
         filter: blur(50px)
   .section__wrapper
-    position: relative
     display: block
     @include wrapper(1080px)
     padding: 16px
     .movie__poster
-      position: absolute
       display: block
       float: left
       width: 140px
       height: 206px
+      z-index: 2020
       figure
         img
           position: relative
@@ -43,6 +43,7 @@
       position: relative
       display: block
       background-color: $dark__4
+      margin: 0 0 16px 0
       @include border-radius(0.2rem)
       @include box-shadow(2)
       .movie__info--split
@@ -51,6 +52,13 @@
         flex-direction: row
         justify-content: space-around
         align-items: center
+    .movie__trailer
+      position: relative
+      display: block
+      margin: 16px 0
+      @include border-radius(0.2rem)
+      @include box-shadow(2)
+      overflow: hidden
 
 .movie__section--banner.active
   display: block
