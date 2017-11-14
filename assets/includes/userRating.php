@@ -9,7 +9,9 @@
                     $ratingCounter = $ratingCounter + 1;
                 }
 
+                 if (!EMPTY($ratingAddup)) {
                     $userRating = $ratingAddup / $ratingCounter;
+                }
 /* -- User rating calculation (End) -- */
 
 
@@ -95,6 +97,10 @@
                                                 <i class="material-icons">star</i>
                                                 <i class="material-icons">star</i>';
         break;
+
+     default:
+         $ratingStars = "Not Yet Rated";
+         break;
 
 }
 /* -- User rating stars manufacturing (End) -- */
