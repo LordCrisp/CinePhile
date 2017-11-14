@@ -53,4 +53,8 @@
   .movie__grid--list
     .movie__list
       .movie__item
+        @include easing-sharp(0.2s)
+        &:hover
+          @include transform(translateY(-2px))
+          @include box-shadow(2)
 
