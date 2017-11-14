@@ -1,6 +1,6 @@
 <?php
 /* -- MOVIE SELECTION -- */
-$movieSelect = 1;
+$movieSelect = 3;
 
 /* -- DATABASE CONNECTION -- */
 $dbServerName = "localhost";

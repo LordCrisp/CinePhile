@@ -2,3 +2,5 @@
 .idea
 assets/styles/.sass-cache
 assets/styles/.sass-cache/*
+assets/movies/*/movie.mkv
+assets/movies/*/movie.mp4
