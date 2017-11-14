@@ -51,7 +51,7 @@ require 'assets/includes/userRating.php';
                 <div class="movie__info--list-container">
                     <ul class="movie__info--list">
                         <li>Top cast</li>
-                        <?php while ($actorRow = $actorResult -> fetch_assoc()) : ?>
+                        <?php while ($actorRow = $actorResult -> fetch_array()) : ?>
                         <li><?=$actorRow['name']?></li>
                         <?php endwhile; ?>
                     </ul>
@@ -105,8 +105,8 @@ require 'assets/includes/userRating.php';
                 <li>
                     <p>Actors</p>
                     <ul class="movie__info--sublist">
-                        <?php while ($actorMoreRow = $actorMoreResult -> fetch_assoc()) : ?>
-                            <li><?=$actorMoreRow['name']?></li>
+                        <?php while ($actorRows = $actorResult -> fetch_array()) : ?>
+                            <li><?=$actorRows['name']?></li>
                         <?php endwhile; ?>
                     </ul>
                 </li>

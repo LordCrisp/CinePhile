@@ -45,6 +45,7 @@ $writerRow = $writerResult->fetch_assoc();
 //ACTOR SELECTION
 $actorQuery = "SELECT * FROM movie_actor INNER JOIN people ON people.id = movie_actor.actor WHERE movie_actor.movie_id = ".$movieSelect."";
 $actorResult = $dbConnect -> query($actorQuery);
+
 //actorRow variable written in loop in index
 
 //PRODUCER SELECTION
