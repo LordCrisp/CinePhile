@@ -5,14 +5,14 @@
   left: 0
   display: none
   width: 100vw
-  min-height: 100vh
-  z-index: 200
+  z-index: 2000
   .movie__banner
     position: absolute
     top: 0
     left: 0
     width: 100vw
     height: 100vh
+    z-index: -1
     figure
       margin: 0
       height: 100%
@@ -22,9 +22,39 @@
         width: 100%
         height: 100%
         filter: blur(50px)
+  .section__wrapper
+    position: relative
+    display: block
+    @include wrapper(1080px)
+    padding: 16px
+    .movie__poster
+      position: absolute
+      display: block
+      float: left
+      width: 140px
+      height: 206px
+      figure
+        img
+          position: relative
+          display: block
+          width: 100%
+          height: auto
+    .movie__info
+      position: relative
+      display: block
+      background-color: $dark__4
+      @include border-radius(0.2rem)
+      @include box-shadow(2)
+      .movie__info--split
+        position: relative
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        align-items: center
 
 .movie__section--banner.active
   display: block
+  background-color: $dark__3
 
 /*-- Movie info (Desktop)
 @media only screen and (min-width: 960px)
@@ -49,10 +79,19 @@
   .section__wrapper
     position: relative
     display: block
-    @include wrapper(1080px)
     padding: 16px
     z-index: 250
+    &::after
+      content: ' '
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 334px
+      background: linear-gradient(-90deg, rgba(0,0,0,0), rgba(0,0,0,0.8) 70%, rgba(0,0,0,0))
+      z-index: -1
     .movie__poster
+      position: relative
       width: 280px
       height: 425px
       float: left
@@ -66,6 +105,8 @@
           position: relative
           width: 100%
           height: auto
+          @include border-radius(0.2rem)
+          @include box-shadow(2)
     .movie__info
       .info__list
         li
@@ -77,3 +118,6 @@
 @media only screen and (min-width: 1168px)
   .movie__section--banner
     height: 400px
+    .section__wrapper
+      &::after
+        height: 400px
