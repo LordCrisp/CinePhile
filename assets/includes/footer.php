@@ -18,7 +18,7 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("movie_container").innerHTML = this.responseText;
+                document.getElementById("movie").innerHTML = this.responseText;
             }
         };
         xhttp.open("GET", "movie.php", true);
