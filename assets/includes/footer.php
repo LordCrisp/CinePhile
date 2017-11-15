@@ -10,8 +10,6 @@
         document.getElementById('theme_color').content = themeColor;
     }
 </script>
-<!-- Player script -->
-<script src="assets/scripts/player.js"></script>
 <!-- Ajax script -->
 <script>
     function loadDoc() {

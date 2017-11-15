@@ -1,8 +1,4 @@
 <?php
-/* -- MOVIE SELECTION -- */
-$movieSelect = 1;
-
-
 /* -- DATABASE CONNECTION -- */
 $dbServerName = "localhost";
 $dbUserName = "admin";

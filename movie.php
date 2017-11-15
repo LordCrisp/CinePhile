@@ -1,8 +1,10 @@
 <?php
+session_start();
+
+$movieSelect = $_SESSION['movie_id'];
 
 require 'assets/includes/dbInfo.php';
 require 'assets/includes/userRating.php';
-
 ?>
 
 <div class="movie__banner">
