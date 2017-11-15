@@ -11,7 +11,7 @@ require 'assets/includes/userRating.php';
             <picture>
                 <source srcset="assets/movies/<?=$infoRow['id']?>/hero.jpg" media="(min-width: 960px)"> <!-- Large -->
                 <source srcset="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
-                <img src="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" alt="movie_name"> <!-- Default to small -->
+                <img src="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" alt="movie_name" id="movie_banner"> <!-- Default to small -->
             </picture>
         </figure>
     </div>
@@ -69,7 +69,7 @@ require 'assets/includes/userRating.php';
                     </ul>
                 </div>
             </div>
-            <a class="button__watch" href="#">watch now</a>
+            <a class="button__watch" href="#" onClick="changeTheme()">watch now</a>
         </div>
         <!-- Movie main info end -->
         <!-- Movie trailer start -->
@@ -158,6 +158,19 @@ require 'assets/includes/userRating.php';
     </ul>
 </section>
 <!-- Movie list end -->
+
+<script src="assets/scripts/colorthief.js"></script>
+<script src="assets/scripts/colorConvert.js"></script>
+
+<script>
+    function changeTheme() {
+    var colorThief = new ColorThief();
+    var banner = document.getElementById('movie_banner');
+    var colors = colorThief.getColor(banner);
+    var themeColor = rgbToHex(colors[0], colors[1], colors[2]);
+    document.getElementById('theme_color').content = themeColor;
+    }
+</script>
 
 <?php require 'assets/includes/footer.php' ?>
 
