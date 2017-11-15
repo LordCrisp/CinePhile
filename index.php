@@ -11,7 +11,7 @@ require 'assets/includes/userRating.php';
             <picture>
                 <source srcset="assets/movies/<?=$infoRow['id']?>/hero.jpg" media="(min-width: 960px)"> <!-- Large -->
                 <source srcset="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
-                <img src="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" alt="movie_name"> <!-- Default to small -->
+                <img src="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" alt="movie_name" id="movie_banner"> <!-- Default to small -->
             </picture>
         </figure>
     </div>
@@ -158,6 +158,9 @@ require 'assets/includes/userRating.php';
     </ul>
 </section>
 <!-- Movie list end -->
+
+<script src="assets/scripts/colorthief.js"></script>
+<script src="assets/scripts/colorConvert.js"></script>
 
 <?php require 'assets/includes/footer.php' ?>
 
