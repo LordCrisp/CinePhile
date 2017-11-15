@@ -5,7 +5,7 @@ require 'assets/includes/userRating.php';
 ?>
 
 <!-- Movie banner start (Desktop only) -->
-<section class="movie__section--banner" id="movie">
+<section class="movie__section--banner active" id="movie">
     <div class="movie__banner">
         <figure>
             <picture>
