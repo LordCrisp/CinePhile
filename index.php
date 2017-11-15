@@ -165,19 +165,6 @@ require 'assets/includes/userRating.php';
 </section>
 <!-- Movie list end -->
 
-<script src="assets/scripts/colorthief.js"></script>
-<script src="assets/scripts/colorConvert.js"></script>
-
-<script>
-    function changeTheme() {
-    var colorThief = new ColorThief();
-    var banner = document.getElementById('movie_banner');
-    var colors = colorThief.getColor(banner);
-    var themeColor = rgbToHex(colors[0], colors[1], colors[2]);
-    document.getElementById('theme_color').content = themeColor;
-    }
-</script>
-
 <?php require 'assets/includes/footer.php' ?>
 
 </body>

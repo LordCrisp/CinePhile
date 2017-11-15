@@ -1,6 +1,6 @@
 <?php
 /* -- MOVIE SELECTION -- */
-$movieSelect = 2;
+$movieSelect = 1;
 
 
 /* -- DATABASE CONNECTION -- */
