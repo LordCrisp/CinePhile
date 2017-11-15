@@ -2,6 +2,7 @@
 /* -- MOVIE SELECTION -- */
 $movieSelect = 2;
 
+
 /* -- DATABASE CONNECTION -- */
 $dbServerName = "localhost";
 $dbUserName = "admin";

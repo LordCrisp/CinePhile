@@ -1,6 +1,5 @@
 /*-- Movie list (Device)
-
-.movie__section
+.movie__grid--list
   .section__title
     position: relative
     display: flex
@@ -20,7 +19,7 @@
     width: 100%
     overflow-x: auto
     margin: 0
-    padding: 0 8px 8px 8px
+    padding: 8px 8px 8px 8px
     .movie__item
       position: relative
       display: block
@@ -30,6 +29,7 @@
       background-color: $dark__4
       overflow: hidden
       @include box-shadow(1)
+      @include easing-standard(0.3s)
       figure
         margin: 0
         padding: 0
@@ -44,4 +44,18 @@
         height: 28px
         font-size: 16px
         font-weight: 500
+      &:active
+        @include transform(translateY(-2px))
+        @include box-shadow(2)
+
+/*-- Movie list (Desktop)
+@media only screen and (min-width: 960px)
+  .movie__grid--list
+    margin-top: 40px
+    .movie__list
+      .movie__item
+        @include easing-sharp(0.2s)
+        &:hover
+          @include transform(translateY(-2px))
+          @include box-shadow(2)
 

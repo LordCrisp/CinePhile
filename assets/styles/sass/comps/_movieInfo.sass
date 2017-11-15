@@ -1,7 +1,283 @@
 /*-- Movie info (Device)
-section[class^='movie__section']
-  position: fixed
+.movie__section--banner
+  display: none
+.movie__section--banner.active
+  position: absolute
   top: 0
   left: 0
+  display: block
   width: 100vw
-  min-height: 100vh
+  height: 200vh
+  background-color: $dark__3
+  z-index: 2000
+  .movie__banner
+    position: absolute
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    z-index: -1
+    figure
+      margin: 0
+      height: 100%
+      img
+        position: relative
+        display: block
+        width: 100%
+        height: 100%
+        filter: blur(50px) brightness(0.7)
+  .section__wrapper
+    display: block
+    @include wrapper(1080px)
+    padding: 16px
+    .movie__poster
+      display: block
+      width: 40%
+      height: auto
+      margin: calc(100px - 16px) 0 0 16px
+      float: left
+      figure
+        img
+          position: relative
+          display: block
+          width: 100%
+          height: auto
+          @include border-radius(0.2rem)
+          @include box-shadow(1)
+    >.info__list
+      padding: 0
+      margin: calc(100px - 16px) 0 0 0
+      list-style: none
+      li
+        padding: 0 0 0 calc(40% + 32px)
+        margin: 0 0 8px 0
+        h1
+          position: absolute
+          top: 32px
+          left: 32px
+          margin: 0
+          color: $light__4
+          font-weight: 300
+          font-size: 38px
+        small
+          position: absolute
+          top: 65px
+          left: 32px
+          color: $light__1
+          font-weight: 400
+          font-size: 18px
+          margin-top: 4px
+        p
+          color: $light__2
+          font-weight: 400
+          font-size: 18px
+          margin: 0
+        #info_genre
+          color: $light__1
+          font-weight: 500
+          font-size: 14px
+        article
+          p
+            color: $light__1
+            font-weight: 400
+            font-size: 14px
+      #list_summary
+        background-color: $dark__4
+        margin: 0
+        padding-top: 16px
+        padding-bottom: 16px
+        @include border-radius(0.2rem 0.2rem 0 0)
+        @include box-shadow(2)
+    .movie__info
+      display: block
+      background-color: $dark__4
+      margin: 0 0 16px 0
+      @include border-radius(0 0 0.2rem 0.2rem)
+      @include box-shadow(2)
+      .movie__info--split
+        position: relative
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        align-items: flex-start
+        .movie__info--list-container
+          .movie__info--list
+            li
+              p:nth-child(1)
+                font-weight: 500
+                font-size: 18px
+                margin-bottom: 4px
+              p
+                font-weight: 400
+                font-size: 14px
+                margin-bottom: 4px
+              p:last-child
+                margin-bottom: 16px
+      .button__watch
+        position: relative
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        width: 100%
+        height: 48px
+        @include border-radius(0 0 0.2rem 0.2rem)
+        background-color: $brand__dark
+        color: $light__3
+        font-weight: 500
+        font-size: 18px
+        text-transform: uppercase
+    .movie__trailer
+      position: relative
+      display: block
+      margin: 16px 0
+      @include border-radius(0.2rem)
+      @include box-shadow(2)
+      overflow: hidden
+    .movie__info--secondary
+      position: relative
+      display: block
+      padding: 0 0 16px 0
+      margin: 16px 0 0 0
+      @include border-radius(0.2rem)
+      background-color: $dark__4
+      @include box-shadow(2)
+      h2
+        position: relative
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: center
+        width: 100%
+        height: 64px
+        margin: 0
+        padding: 0 0 0 16px
+        font-weight: 300
+        font-size: 28px
+        text-transform: uppercase
+      .movie__info--list
+        li
+          margin-bottom: 24px
+          h3
+            padding: 0 0 0 16px
+            color: $light__4
+            font-weight: 500
+            font-size: 18px
+            margin-bottom: 8px
+          p
+            padding: 0 0 0 16px
+            color: $light__1
+            font-weight: 400
+            font-size: 14px
+          .movie__info--sublist
+            position: relative
+            display: flex
+            flex-direction: row
+            justify-content: flex-start
+            align-items: center
+            width: 100%
+            height: 56px
+            overflow-y: auto
+            li
+              position: relative
+              display: flex
+              flex-direction: row
+              justify-content: center
+              align-items: center
+              height: 40px
+              padding: 0 16px
+              margin: 0 16px
+              border: 2px solid $light__1
+              @include border-radius(40px)
+              background-color: $dark__4
+              color: $light__1
+              font-weight: 400
+              font-size: 18px
+              white-space: nowrap
+
+/*-- Movie info (Desktop)
+@media only screen and (min-width: 960px)
+  .movie__section--banner
+    position: relative !important
+    display: block
+    width: 100vw
+    height: 334px
+    z-index: 50
+    .movie__banner
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: inherit !important
+      overflow: hidden !important
+      @include box-shadow(1)
+      figure
+        height: inherit
+        img
+          width: 100%
+          height: auto
+          filter: blur(0px)
+    .section__wrapper
+      position: relative
+      display: block
+      @include wrapper(1000px)
+      &::after
+        content: ' '
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 334px
+        background: linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,0.8) 20%, rgba(0,0,0,0))
+        z-index: 50
+      .movie__poster
+        position: relative
+        display: block
+        padding: 32px 0 0 0
+        float: left
+        z-index: 60
+        figure
+          img
+            width: 100%
+            max-width: 256px
+            height: auto
+            @include border-radius(0.2rem)
+            @include box-shadow(2)
+      >.info__list
+        position: relative
+        z-index: 60
+        li
+          padding: 0 0 0 calc(256px + 16px)
+          h1
+            position: relative
+            display: block
+            padding: 32px 0 0 0
+            margin: 0
+            color: $light__4
+            font-weight: 300
+            font-size: 84px
+          small
+            margin: 0
+            color: $light__1
+            font-weight: 400
+            font-size: 38px
+          p
+            color: $light__2
+            font-weight: 500
+            font-size: 18px
+        #list_summary
+          display: none
+      .movie__info
+        display: none
+      .movie__trailer
+        display: none
+      .movie__info--secondary
+        display: none
+
+/*-- Movie info (Large Desktop)
+@media only screen and (min-width: 1168px)
+  .movie__section--banner
+    height: 400px
+    .section__wrapper
+      &::after
+        height: 400px
