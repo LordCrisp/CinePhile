@@ -5,7 +5,7 @@ require 'assets/includes/userRating.php';
 ?>
 
 <!-- Movie banner start (Desktop only) -->
-<section class="movie__section--banner active" id="movie">
+<section class="movie__section--banner" id="movie">
     <div class="movie__banner">
         <figure>
             <picture>
@@ -69,7 +69,7 @@ require 'assets/includes/userRating.php';
                     </ul>
                 </div>
             </div>
-            <a class="button__watch" href="#">watch now</a>
+            <a class="button__watch" href="#" onClick="changeTheme()">watch now</a>
         </div>
         <!-- Movie main info end -->
         <!-- Movie trailer start -->
@@ -161,6 +161,16 @@ require 'assets/includes/userRating.php';
 
 <script src="assets/scripts/colorthief.js"></script>
 <script src="assets/scripts/colorConvert.js"></script>
+
+<script>
+    function changeTheme() {
+    var colorThief = new ColorThief();
+    var banner = document.getElementById('movie_banner');
+    var colors = colorThief.getColor(banner);
+    var themeColor = rgbToHex(colors[0], colors[1], colors[2]);
+    document.getElementById('theme_color').content = themeColor;
+    }
+</script>
 
 <?php require 'assets/includes/footer.php' ?>
 
