@@ -102,7 +102,7 @@
                                                 <i class="material-icons">star</i>
                                                 <i class="material-icons">star</i>';
         break;
-     
+
      default:
          $ratingStars = "Not Yet Rated";
          break;
