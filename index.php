@@ -5,10 +5,14 @@ require 'assets/includes/userRating.php';
 ?>
 
 <!-- Movie banner start (Desktop only) -->
-<section class="movie__section--banner active" id="movie">
+<section class="movie__section--banner" id="movie">
     <div class="movie__banner">
         <figure>
-            <img src="assets/movies/<?=$infoRow['id']?>/hero.jpg" alt="movie_banner">
+            <picture>
+                <source srcset="assets/movies/<?=$infoRow['id']?>/hero.jpg" media="(min-width: 960px)"> <!-- Large -->
+                <source srcset="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
+                <img src="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" alt="movie_name" id="movie_banner"> <!-- Default to small -->
+            </picture>
         </figure>
     </div>
     <div class="section__wrapper">
@@ -16,28 +20,29 @@ require 'assets/includes/userRating.php';
         <div class="movie__poster">
             <figure>
                 <picture>
-                    <source srcset="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
                     <source srcset="assets/movies/<?=$infoRow['id']?>/poster.jpg" media="(min-width: 960px)"> <!-- Large -->
+                    <source srcset="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
                     <img src="assets/movies/<?=$infoRow['id']?>/poster_small.jpg" alt="movie_name"> <!-- Default to small -->
                 </picture>
             </figure>
         </div>
         <!-- Movie poster end -->
         <!-- Movie main info start -->
+        <ul class="info__list">
+            <li><h1><?=$infoRow['title']?></h1></li>
+            <li><small><?=$infoRow['year']?></small></li>
+            <li><p id="info_userrating"><?=$ratingStars?></p></li>
+            <li><p id="info_runtime"><?=$infoRow['runtime']?></p></li>
+            <li><p id="info_contentrating"><?=$infoRow['content_rating']?></p></li>
+            <li><p id="info_genre">Action, Crime, Drama</p></li>
+            <li id="list_summary">
+                <article class="movie__summary">
+                    <p><?=$infoRow['plot']?></p>
+                </article>
+            </li>
+        </ul>
 
         <div class="movie__info">
-            <ul class="info__list">
-                <li><h1><?=$infoRow['title']?></h1></li>
-                <li><small><?=$infoRow['year']?></small></li>
-                <li><p>User Rating <?=$ratingStars?></p></li>
-                <li><p><?=$infoRow['runtime']?></p></li>
-                <li><p><?=$infoRow['content_rating']?></p></li>
-                <li>
-                    <article class="movie__summary">
-                        <p><?=$infoRow['plot']?></p>
-                    </article>
-                </li>
-            </ul>
             <div class="movie__info--split">
                 <div class="movie__info--list-container">
                     <ul class="movie__info--list">
@@ -55,14 +60,16 @@ require 'assets/includes/userRating.php';
                 </div>
                 <div class="movie__info--list-container">
                     <ul class="movie__info--list">
-                        <li>Top cast</li>
-                        <?php while ($actorRow = $actorResult -> fetch_array()) : ?>
-                        <li><?=$actorRow['name']?></li>
-                        <?php endwhile; ?>
+                        <li>
+                            <p>Top cast</p>
+                            <?php while ($actorRow = $actorResult -> fetch_array()) : ?>
+                            <p><?=$actorRow['name']?></p>
+                            <?php endwhile; ?>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <a class="button__watch" href="#">watch now</a>
+            <a class="button__watch" href="#" onClick="changeTheme()">watch now</a>
         </div>
         <!-- Movie main info end -->
         <!-- Movie trailer start -->
@@ -92,7 +99,7 @@ require 'assets/includes/userRating.php';
             <h2>more info</h2>
             <ul class="movie__info--list">
                 <li>
-                    <p>Producer</p>
+                    <h3>Producer</h3>
                     <ul class="movie__info--sublist">
                         <?php while ($producerRow = $producerResult -> fetch_assoc()) : ?>
                             <li><?=$producerRow['name']?></li>
@@ -100,7 +107,7 @@ require 'assets/includes/userRating.php';
                     </ul>
                 </li>
                 <li>
-                    <p>Screenwriter</p>
+                    <h3>Screenwriter</h3>
                     <ul class="movie__info--sublist">
                         <?php while ($screenwriterRow = $screenwriterResult -> fetch_assoc()) : ?>
                             <li><?=$screenwriterRow['name']?></li>
@@ -108,7 +115,7 @@ require 'assets/includes/userRating.php';
                     </ul>
                 </li>
                 <li>
-                    <p>Actors</p>
+                    <h3>Actors</h3>
                     <ul class="movie__info--sublist">
                         <?php while ($actorMoreRows = $actorMoreResult -> fetch_array()) : ?>
                             <li><?=$actorMoreRows['name']?></li>
@@ -116,11 +123,11 @@ require 'assets/includes/userRating.php';
                     </ul>
                 </li>
                 <li>
-                    <p>Country</p>
+                    <h3>Country</h3>
                     <p><?=$infoRow['country']?></p>
                 </li>
                 <li>
-                    <p>Language</p>
+                    <h3>Language</h3>
                     <p><?=$infoRow['language']?></p>
                 </li>
             </ul>
@@ -140,8 +147,8 @@ require 'assets/includes/userRating.php';
         <li class="movie__item">
             <figure>
                 <picture>
-                    <source srcset="assets/movies/<?=$listRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
                     <source srcset="assets/movies/<?=$listRow['id']?>/poster.jpg" media="(min-width: 960px)"> <!-- Large -->
+                    <source srcset="assets/movies/<?=$listRow['id']?>/poster_small.jpg" media="(min-width: 0px)"> <!-- Small -->
                     <img src="assets/movies/<?=$listRow['id']?>/poster_small.jpg" alt="<?=str_replace(' ', '-', $listRow['title'])?>-poster"> <!-- Default to small -->
                 </picture>
             </figure>
@@ -151,6 +158,19 @@ require 'assets/includes/userRating.php';
     </ul>
 </section>
 <!-- Movie list end -->
+
+<script src="assets/scripts/colorthief.js"></script>
+<script src="assets/scripts/colorConvert.js"></script>
+
+<script>
+    function changeTheme() {
+    var colorThief = new ColorThief();
+    var banner = document.getElementById('movie_banner');
+    var colors = colorThief.getColor(banner);
+    var themeColor = rgbToHex(colors[0], colors[1], colors[2]);
+    document.getElementById('theme_color').content = themeColor;
+    }
+</script>
 
 <?php require 'assets/includes/footer.php' ?>
 
