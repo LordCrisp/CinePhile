@@ -1,6 +1,7 @@
 <?php
 /* -- MOVIE SELECTION -- */
-$movieSelect = 1;
+$movieSelect = 2;
+
 
 /* -- DATABASE CONNECTION -- */
 $dbServerName = "localhost";
@@ -47,6 +48,11 @@ $actorQuery = "SELECT * FROM movie_actor INNER JOIN people ON people.id = movie_
 $actorResult = $dbConnect -> query($actorQuery);
 //actorRow variable written in loop in index
 
+//MORE ACTOR SELECTION
+$actorMoreQuery = "SELECT * FROM movie_actor INNER JOIN people ON people.id = movie_actor.actor WHERE movie_actor.movie_id = ".$movieSelect."";
+$actorMoreResult = $dbConnect -> query($actorMoreQuery);
+//actorMoreRow variable written in loop in index
+
 //PRODUCER SELECTION
 $producerQuery = "SELECT * FROM movie_producer INNER JOIN people ON people.id = movie_producer.producer WHERE movie_producer.movie_id = ".$movieSelect."";
 $producerResult = $dbConnect -> query($producerQuery);
@@ -57,12 +63,12 @@ $screenwriterQuery = "SELECT * FROM movie_screenwriter INNER JOIN people ON peop
 $screenwriterResult = $dbConnect -> query($screenwriterQuery);
 //screenwriterRow variable written in loop in index
 
-//MORE ACTOR SELECTION
-$actorMoreQuery = "SELECT * FROM movie_actor INNER JOIN people ON people.id = movie_actor.actor WHERE movie_actor.movie_id = ".$movieSelect."";
-$actorMoreResult = $dbConnect -> query($actorMoreQuery);
-//actorMoreRow variable written in loop in index
-
 //USER RATING SELECTION
 $userRatingQuery = "SELECT * FROM user_rating WHERE movie_id = ".$movieSelect."";
 $userRatingResult = $dbConnect -> query($userRatingQuery);
 //userRatingRow variable written in loop in index
+
+//GENRE SELECTION
+$genreQuery = "SELECT * FROM movie_genre WHERE movie_id = ".$movieSelect."";
+$genreResult = $dbConnect -> query($genreQuery);
+//genreRow variable written in loop in index

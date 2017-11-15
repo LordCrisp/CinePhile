@@ -34,7 +34,13 @@ require 'assets/includes/userRating.php';
             <li><p id="info_userrating"><?=$ratingStars?></p></li>
             <li><p id="info_runtime"><?=$infoRow['runtime']?></p></li>
             <li><p id="info_contentrating"><?=$infoRow['content_rating']?></p></li>
-            <li><p id="info_genre">Action, Crime, Drama</p></li>
+            <li>
+                <ul id="info_genre">
+                    <?php while ($genreRows = $genreResult -> fetch_array()) : ?>
+                        <li class="info__genre"><?=$genreRows['genre']?></li>
+                    <?php endwhile; ?>
+                </ul>
+            </li>
             <li id="list_summary">
                 <article class="movie__summary">
                     <p><?=$infoRow['plot']?></p>
