@@ -27,10 +27,12 @@
 </script>
 <script>
     $('.button__movie').click(function() {
-       $('#movie').addClass('active');
-       setTimeout(function() {
-           changeTheme();
-       }, 100);
+        if ($(window).width < 961) {
+            $('#movie').addClass('active');
+            setTimeout(function () {
+                changeTheme();
+            }, 100);
+        }
     });
 </script>
 <?php $dbConnect -> close(); ?>
