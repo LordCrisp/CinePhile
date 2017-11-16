@@ -5,8 +5,6 @@ $movieSelect = $movieId;
 require 'assets/includes/dbInfo.php';
 require 'assets/includes/userRating.php';
 
-echo '<script src="assets/scripts/player.js"></script>';
-
 ?>
 
 <div class="movie__banner">
@@ -78,13 +76,13 @@ echo '<script src="assets/scripts/player.js"></script>';
                 </ul>
             </div>
         </div>
-        <a class="button__watch" href="#" onClick="changeTheme()">watch now</a>
+        <a class="button__watch" href="#"">watch now</a>
     </div>
     <!-- Movie main info end -->
     <!-- Movie trailer start -->
     <div class="movie__trailer">
         <div class="player__main">
-            <video controls id="player_video">
+            <video id="player_video">
                 <source src="assets/movies/<?=$infoRow['id']?>/trailer.mp4">
             </video>
             <div class="player__controls" id="controls">
@@ -143,3 +141,5 @@ echo '<script src="assets/scripts/player.js"></script>';
     </div>
     <!-- Movie secondary info end -->
 </div>
+
+<?php echo '<script src="assets/scripts/player.js"></script>' ?>
