@@ -2,7 +2,7 @@
 .idea
 assets/styles/.sass-cache
 assets/styles/.sass-cache/*
-assets/styles/movies/1/*.mkv
-assets/styles/movies/2/*.mkv
-assets/styles/movies/3/*.mp4
+assets/styles/movies/1/movie.mkv
+assets/styles/movies/2/movie.mkv
+assets/styles/movies/3/movie.mp4
 
