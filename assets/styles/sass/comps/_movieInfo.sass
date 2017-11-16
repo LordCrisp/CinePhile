@@ -1,6 +1,7 @@
 /*-- Movie info (Device)
 .movie__section--banner
   display: none
+
 .movie__section--banner.active
   position: absolute
   top: 0
@@ -30,6 +31,8 @@
     display: block
     @include wrapper(1080px)
     padding: 16px
+    .button__toggle-info
+      display: none
     .movie__poster
       display: block
       width: 40%
@@ -44,7 +47,7 @@
           height: auto
           @include border-radius(0.2rem)
           @include box-shadow(1)
-    >.info__list
+    > .info__list
       padding: 0
       margin: calc(100px - 16px) 0 0 0
       list-style: none
@@ -122,7 +125,8 @@
         width: 100%
         height: 48px
         @include border-radius(0 0 0.2rem 0.2rem)
-        background-color: $brand__dark
+        background: linear-gradient(-45deg, $brand__dark, $brand__light)
+        outline: none
         color: $light__3
         font-weight: 500
         font-size: 18px
@@ -230,8 +234,45 @@
         left: 0
         width: 100%
         height: 334px
-        background: linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,0.8) 20%, rgba(0,0,0,0))
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 0))
         z-index: 50
+      .banner__buttons
+        display: flex
+        position: absolute
+        bottom: -65px
+        right: 0
+        @include border-radius(0.5rem)
+        background-color: rgba(0, 0, 0, 0.6)
+        .button__watch-direct
+          display: flex
+          z-index: 95
+          right: 0
+          height: 56px
+          padding: 0 16px
+          border: none
+          @include border-radius(0.5rem)
+          @include box-shadow(2)
+          background: linear-gradient(-45deg, $brand__dark, $brand__light)
+          outline: none
+          color: $light__3
+          font-weight: 500
+          font-size: 18px
+          text-transform: uppercase
+        .button__toggle-info
+          display: flex
+          z-index: 90
+          right: 60px
+          height: 56px
+          padding: 0 16px
+          border: none
+          @include border-radius(0 0.5rem 0.5rem 0)
+          @include box-shadow(2)
+          outline: none
+          background: none !important
+          color: $light__1
+          font-weight: 500
+          font-size: 18px
+          text-transform: uppercase
       .movie__poster
         position: relative
         display: block
@@ -247,7 +288,7 @@
             @include box-shadow(3)
             transform-origin: center
             @include animation(poster__animate--in 1s forwards)
-      >.info__list
+      > .info__list
         position: relative
         z-index: 60
         li
@@ -277,7 +318,7 @@
                 content: ', '
               &:last-child
                 &::after
-                  content: none 
+                  content: none
         #list_summary
           display: none
       .movie__info
