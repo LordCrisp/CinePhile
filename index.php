@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'assets/includes/header.php';
 require 'assets/includes/dbInfo.php';
 
