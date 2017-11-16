@@ -19,6 +19,10 @@ require 'assets/includes/userRating.php';
     </figure>
 </div>
 <div class="section__wrapper">
+    <div class="banner__buttons">
+        <button class="button__watch-direct">Watch now</button>
+        <button class="button__toggle-info" id="toggle-info">More Info</button>
+    </div>
     <!-- Movie poster start -->
     <div class="movie__poster">
         <figure>
