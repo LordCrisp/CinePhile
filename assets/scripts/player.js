@@ -1,7 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-    initializeMediaPlayer();
-}, false);
-
 function initializeMediaPlayer() {
     player = document.getElementById('player_video');
     player.controls = false;
