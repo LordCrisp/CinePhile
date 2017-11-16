@@ -29,7 +29,7 @@ require 'assets/includes/dbInfo.php';
                     </picture>
                 </figure>
                 <h2 class="movie__title"><?=$listRow['title']?></h2>
-                <button type="submit" id="submit_<?=$listRow['id']?>" onclick="validate(this.id)">submit</button>
+                <button type="submit" class="button__movie" id="submit_<?=$listRow['id']?>" onclick="validate(this.id)">submit</button>
             </form>
         </li>
         <?php endwhile; ?>

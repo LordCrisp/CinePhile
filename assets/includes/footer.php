@@ -24,4 +24,8 @@
         xhttp.send("movie_id=" + id);
     }
 </script>
+<script>
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var buttonMovie = document.getElementsByClassName('button__movie');
+</script>
 <?php $dbConnect -> close(); ?>

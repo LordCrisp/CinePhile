@@ -245,6 +245,8 @@
             height: auto
             @include border-radius(0.2rem)
             @include box-shadow(3)
+            transform-origin: center
+            @include animation(poster__animate--in 1s forwards)
       >.info__list
         position: relative
         z-index: 60
