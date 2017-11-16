@@ -43,8 +43,8 @@ if (isset($_SESSION['email'])){
     <br>
     <input type="password" name="password" placeholder="Password" required>
     <br>
-    <button class="login_btn btn btn-primary" href="register.php">Register</button>
-    <button class="login_btn btn btn-primary" type="submit">Login</button>
+    <a class="login_btn btn" href="/assets/includes/register.php"" role="button">Register</a>
+    <button class="login_btn btn" type="submit">Login</button>
   </form>
 </center>
 
