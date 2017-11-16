@@ -5,7 +5,7 @@ $movieSelect = $movieId;
 require 'assets/includes/dbInfo.php';
 require 'assets/includes/userRating.php';
 
-
+echo '<script src="assets/scripts/player.js"></script>';
 
 ?>
 
