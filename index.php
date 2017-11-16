@@ -2,22 +2,7 @@
 require 'assets/includes/header.php';
 
 $movieSelect = 1;
-
-if (isset ($_SESSION['movie_id'])) {
-    $movieSelect = $_SESSION['movie_id'];
-    echo '<script>function loadDoc() {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("movie").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "movie.php", true);
-        xhttp.send();
-    }
-    loadDoc()</script>';
-    echo '<script src="assets/scripts/player.js"></script>';
-}
+$_SESSION['movie_id'] = $movieSelect;
 
 require 'assets/includes/dbInfo.php';
 ?>
@@ -34,8 +19,8 @@ require 'assets/includes/dbInfo.php';
     <h1 class="section__title">Recommended For You</h1>
     <ul class="movie__list">
         <?php while ($listRow = $listResult -> fetch_assoc()) : ?>
-        <li class="movie__item" onclick="loadDoc()">
-            <form method="POST" action="loadMovie.php">
+        <li class="movie__item">
+            <form onsubmit="return false;" method="POST" action="javascript:void(0);">
                 <figure>
                     <picture>
                         <source srcset="assets/movies/<?=$listRow['id']?>/poster.jpg" media="(min-width: 960px)"> <!-- Large -->
@@ -44,14 +29,19 @@ require 'assets/includes/dbInfo.php';
                     </picture>
                 </figure>
                 <h2 class="movie__title"><?=$listRow['title']?></h2>
-                <input type="hidden" value="<?=$listRow['id']?>" name="movie_id">
-                <button type="submit">submit</button>
+                <button type="submit" id="submit_<?=$listRow['id']?>" onclick="validate(this.id)">submit</button>
             </form>
         </li>
         <?php endwhile; ?>
     </ul>
 </section>
 <!-- Movie list end -->
+
+<script>
+    validate = function(clicked_id) {
+        loadDoc(clicked_id);
+    }
+</script>
 
 <?php require 'assets/includes/footer.php' ?>
 

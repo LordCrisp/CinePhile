@@ -1,10 +1,12 @@
 <?php
 session_start();
-
-$movieSelect = $_SESSION['movie_id'];
-
+$movieId = str_replace('submit_',"",$_POST['movie_id']);
+$movieSelect = $movieId;
 require 'assets/includes/dbInfo.php';
 require 'assets/includes/userRating.php';
+
+
+
 ?>
 
 <div class="movie__banner">

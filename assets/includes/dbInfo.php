@@ -1,4 +1,5 @@
 <?php
+
 /* -- DATABASE CONNECTION -- */
 $dbServerName = "localhost";
 $dbUserName = "admin";
