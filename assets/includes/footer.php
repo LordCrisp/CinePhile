@@ -1,3 +1,4 @@
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <!-- Color scripts -->
 <script src="assets/scripts/colorthief.js"></script>
 <script src="assets/scripts/colorConvert.js"></script>
@@ -24,4 +25,14 @@
         xhttp.send("movie_id=" + id);
     }
 </script>
+<script>
+    $('.button__movie').click(function() {
+       $('#movie').addClass('active');
+       setTimeout(function() {
+           changeTheme();
+       }, 300);
+    });
+</script>
+<!-- Player script -->
+<script src="assets/scripts/player.js"></script>
 <?php $dbConnect -> close(); ?>

@@ -221,6 +221,8 @@
           width: 100%
           height: auto
           filter: blur(0px)
+          transform-origin: center
+          @include animation(banner__animate--in 1s forwards)
     .section__wrapper
       position: relative
       display: block
@@ -284,6 +286,8 @@
             height: auto
             @include border-radius(0.2rem)
             @include box-shadow(3)
+            transform-origin: center
+            @include animation(poster__animate--in 1s forwards)
       > .info__list
         position: relative
         z-index: 60
