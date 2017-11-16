@@ -85,6 +85,15 @@
             color: $light__1
             font-weight: 400
             font-size: 14px
+        ul
+          li
+            display: inline-block
+            padding-left: 0
+            &::after
+              content: ', '
+            &:last-child
+              &::after
+                content: none
       #list_summary
         background-color: $dark__4
         margin: 0
