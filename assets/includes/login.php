@@ -35,7 +35,6 @@ if (isset($_SESSION['email'])){
     <input type="text" name="email" placeholder="E-Mail" required>
     <input type="password" name="password" placeholder="Password" required>
     <button class="btn btn-lg btn-primary" type="submit">Login</button>
-    <a class="btn btn-lg btn-primary" href="register.php">Register</a>
   </form>
 </center>
 
