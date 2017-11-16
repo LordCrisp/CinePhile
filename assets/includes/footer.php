@@ -30,7 +30,7 @@
        $('#movie').addClass('active');
        setTimeout(function() {
            changeTheme();
-       }, 300);
+       }, 100);
     });
 </script>
 <!-- Player script -->
