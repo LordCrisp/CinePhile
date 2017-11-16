@@ -32,7 +32,6 @@ if (isset($_SESSION['email'])){
   echo "Welcome  $email";
   header("Location: /index.php");
   echo "<a class='btn btnlg btn-primary' href='logoff.php'>Log off</a>";
-
   print_r ($_SESSION['id']);
   print_r ($_SESSION['name']);
 }
@@ -44,7 +43,8 @@ if (isset($_SESSION['email'])){
     <br>
     <input type="password" name="password" placeholder="Password" required>
     <br>
-    <button class="btn btn-lg btn-primary" type="submit">Login</button>
+    <button class="login_btn btn btn-primary" href="register.php">Register</button>
+    <button class="login_btn btn btn-primary" type="submit">Login</button>
   </form>
 </center>
 
