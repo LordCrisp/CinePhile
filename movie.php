@@ -89,7 +89,7 @@ require 'assets/includes/userRating.php';
             <video id="player_video" controls>
                 <source src="assets/movies/<?=$infoRow['id']?>/trailer.mp4">
             </video>
-            <div class="player__controls" id="controls" style="display: none;">
+            <div class="player__controls" id="controls">
                 <!-- Play / pause -->
                 <button id="controls_play-pause" onclick="togglePlayPause();"><i class="material-icons">play_arrow</i></button>
                 <!-- Audio control -->
@@ -145,4 +145,3 @@ require 'assets/includes/userRating.php';
     </div>
     <!-- Movie secondary info end -->
 </div>
-

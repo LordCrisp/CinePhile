@@ -40,9 +40,12 @@ require 'assets/includes/dbInfo.php';
 <script>
     validate = function(clicked_id) {
         loadDoc(clicked_id);
-    }
+        setTimeout(function() {
+           loadPlayerScript();
+        }, 1000);
+    };
 </script>
-
+<script id="player"></script>
 <?php require 'assets/includes/footer.php' ?>
 
 </body>

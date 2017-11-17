@@ -24,15 +24,23 @@
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("movie_id=" + id);
     }
+    function loadPlayerScript() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("player").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("POST", "assets/scripts/player.js", true);
+        xhttp.send();
+    }
 </script>
 <script>
     $('.button__movie').click(function() {
-        if ($(window).width < 961) {
             $('#movie').addClass('active');
             setTimeout(function () {
                 changeTheme();
             }, 100);
-        }
     });
 </script>
 <?php $dbConnect -> close(); ?>
