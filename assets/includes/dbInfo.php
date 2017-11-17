@@ -1,5 +1,9 @@
 <?php
 
+if (!isset($movieSelect)) {
+    $movieSelect = 1;
+}
+
 /* -- DATABASE CONNECTION -- */
 $dbServerName = "localhost";
 $dbUserName = "admin";
