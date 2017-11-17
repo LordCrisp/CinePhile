@@ -47,7 +47,7 @@
         setTimeout(function () {
             $('#movie').removeClass('inactive active');
         }, 300);
-        $('#theme_color').content = '#212121';
+        document.getElementById('theme_color').content = "#212121";
     })
 </script>
 <?php $dbConnect -> close(); ?>
