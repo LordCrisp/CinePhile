@@ -26,6 +26,7 @@ header('Location: login.php');
     <br>
     <input type="password" name="password" placeholder="Password" required>
     <br />
+    <a class="login_btn btn" href="/assets/includes/login.php" role="button">Back</a>
     <button class="login_btn btn" type="submit">Submit</button>
   </form>
 </center>

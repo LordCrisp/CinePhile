@@ -5,6 +5,16 @@ require 'assets/includes/dbInfo.php';
 
 $query = "SELECT * FROM movie";
 $result = $dbConnect ->query($query);
+
+
+$email = $_SESSION['email'];
+
+if (isset($_SESSION['email']) && !empty($_SESSION['email'])) {
+echo "Welcome $email";
+} else {
+  header('Location: assets/includes/login.php');
+}
+
 ?>
 
 <a class='btn btnlg btn-primary' href='/assets/includes/logoff.php'>Log off</a>
