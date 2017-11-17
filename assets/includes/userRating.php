@@ -20,7 +20,12 @@ if (!EMPTY($ratingAddup)) {
 switch (true) {
 
     case ($userRating == null):
-        $ratingStars = "Not Yet Rated";
+        $ratingStars = "<p class='notYetRated'>Not Yet Rated</p>
+                        <button name=\"ratingSelect\" value=\"1\"><i class=\"material-icons noRating\">star_border</i></button>
+                        <button name=\"ratingSelect\" value=\"2\"><i class=\"material-icons noRating\">star_border</i></button>
+                        <button name=\"ratingSelect\" value=\"3\"><i class=\"material-icons noRating\">star_border</i></button>
+                        <button name=\"ratingSelect\" value=\"4\"><i class=\"material-icons noRating\">star_border</i></button>
+                        <button name=\"ratingSelect\" value=\"5\"><i class=\"material-icons noRating\">star_border</i></button>";
         break;
 
     case ($userRating <= 0.7):

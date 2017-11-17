@@ -107,6 +107,24 @@
             color: $light__1
             font-weight: 400
             font-size: 14px
+        #info_userrating
+          button
+            transition: 0.5s
+            //float: right
+            cursor: pointer
+            background-color: transparent
+            color: $light__4
+            border: none
+            position: relative
+            display: inline-block
+            width: 34px
+            height: 34px
+            border: 0
+            &:hover
+              ~button
+                color: $dark__3
+          .noRating
+            display: inline-block
         ul
           li
             display: inline-block
@@ -342,23 +360,6 @@
             color: $light__2
             font-weight: 500
             font-size: 18px
-          #info_userrating
-            button
-              transition: 0.5s
-              //float: right
-              cursor: pointer
-              background-color: transparent
-              color: $light__4
-              border: none
-              &:hover
-                ~button
-                  color: $dark__3
-            .noRating
-              display: none
-            .notYetRated:hover
-              ~button
-                display: inline-block
-
 
           ul
             li
