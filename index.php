@@ -17,7 +17,7 @@ echo "Welcome $email";
 
 ?>
 
-<a class='btn btnlg btn-primary' href='/assets/includes/logoff.php'>Log off</a>
+<a class='log_btn btn' href='/assets/includes/logoff.php'>Log off</a>
 
 <!-- Movie banner start (Desktop only) -->
 <section class="movie__section--banner">

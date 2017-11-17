@@ -7,9 +7,8 @@ if(isset($_POST['email']) and isset($_POST['password'])) {
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$_SESSION['email'] = $email;
 
-$loginQuery = "SELECT * FROM `users` WHERE `email` = '$email' and `password` = '$password' and `name` = $name";
+$loginQuery = "SELECT * FROM `users` WHERE `email` = '$email' and `password` = '$password'";
 
 $loginResult = mysqli_query($dbConnect, $loginQuery) or die(mysqli_error($dbConnect));
 $loginCount = mysqli_num_rows($loginResult);
@@ -32,10 +31,11 @@ if (isset($_SESSION['email'])){
   $email = $_SESSION['email'];
   echo "Welcome  $email";
   header("Location: /index.php");
-  echo "<a class='btn btnlg btn-primary' href='logoff.php'>Log off</a>";
   print_r ($_SESSION['id']);
   print_r ($_SESSION['name']);
 }
+
+
 
 ?>
 <center>
