@@ -42,10 +42,12 @@
 </script>
 <script>
     $('.button__movie').click(function() {
+        if ($(window).width() < 961) {
             $('#movie').addClass('active');
             setTimeout(function () {
                 changeTheme();
             }, 100);
+        }
     });
     $(document).on('click', '.button__close', function () {
         $(this).parent().addClass('inactive');
