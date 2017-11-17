@@ -36,33 +36,9 @@ require 'assets/includes/userRating.php';
     <ul class="info__list">
         <li><h1><?=$infoRow['title']?></h1></li>
         <li><small><?=$infoRow['year']?></small></li>
-        <li><a id="info_userrating" data-toggle="modal" data-target="#exampleModal"><?=$ratingStars?></a></li>
-        <!-- User rating modal (start) -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Rate movie</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form method="post" action="/assets/includes/updateRating.php">
-                            <button name="ratingSelect" value="1"><i class="material-icons">star_border</i>1</button>
-                            <button name="ratingSelect" value="2"><i class="material-icons">star_border</i>2</button>
-                            <button name="ratingSelect" value="3"><i class="material-icons">star_border</i>3</button>
-                            <button name="ratingSelect" value="4"><i class="material-icons">star_border</i>4</button>
-                            <button name="ratingSelect" value="5"><i class="material-icons">star_border</i>5</button>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- User rating modal (end) -->
+
+        <li><form id="info_userrating" method="post" action="assets/includes/updateRating.php"><?=$ratingStars?></form></li>
+
         <li><p id="info_runtime"><?=$infoRow['runtime']?></p></li>
         <li><p id="info_contentrating"><?=$infoRow['content_rating']?></p></li>
         <li>
@@ -171,4 +147,11 @@ require 'assets/includes/userRating.php';
     </div>
     <!-- Movie secondary info end -->
 </div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<!-- Tether script (required fror Bootstrap 4) -->
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<!-- Bootstrap script -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
