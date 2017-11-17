@@ -9,6 +9,13 @@ require 'assets/includes/dbInfo.php';
 
 <!-- Movie banner start -->
 <section class="movie__section--banner" id="movie">
+    <div class="movie__banner">
+        <figure>
+            <picture>
+                <img src="https://images.unsplash.com/photo-1468259275383-c4f1b88d5772?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="movie_name" id="movie_banner"> <!-- Default to small -->
+            </picture>
+        </figure>
+    </div>
 </section>
 <!-- Movie banner end -->
 
