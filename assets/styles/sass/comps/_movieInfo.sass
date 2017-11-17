@@ -2,6 +2,10 @@
 .movie__section--banner
   display: none
 
+.movie__section--banner.inactive
+  display: block
+  @include animation(movie__animate--out 0.3s forwards !important)
+
 .movie__section--banner.active
   position: absolute
   top: 0
@@ -12,6 +16,24 @@
   background-color: $dark__3
   z-index: 2000
   @include animation(movie__animate--in 0.3s forwards)
+  .button__close
+    position: fixed
+    top: 0
+    right: 0
+    display: block
+    width: 56px
+    height: 56px
+    margin: 16px
+    border: none
+    @include border-radius(100%)
+    outline: none
+    background: linear-gradient(-45deg, $brand__dark, $brand__light)
+    z-index: 1000
+    i
+      position: absolute
+      top: calc(50% - 12px)
+      left: calc(50% - 12px)
+      color: $light__4
   .movie__banner
     position: absolute
     top: 0

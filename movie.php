@@ -7,6 +7,7 @@ require 'assets/includes/userRating.php';
 
 ?>
 
+<button class="button__close"><i class="material-icons">close</i></button>
 <div class="movie__banner">
     <figure>
         <picture>

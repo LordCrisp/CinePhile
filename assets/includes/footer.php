@@ -42,5 +42,12 @@
                 changeTheme();
             }, 100);
     });
+    $(document).on('click', '.button__close', function () {
+        $(this).parent().addClass('inactive');
+        setTimeout(function () {
+            $('#movie').removeClass('inactive active');
+        }, 300);
+        $('#theme_color').content = '#212121';
+    })
 </script>
 <?php $dbConnect -> close(); ?>
